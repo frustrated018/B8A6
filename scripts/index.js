@@ -8,16 +8,18 @@ const handleCatagory = async () => {
   apiData.forEach((tabName) => {
     const div = document.createElement("div");
     div.innerHTML = `
-        <a onclick = "handleLoadNews(${tabName.category_id})" class="tab">${tabName.category}</a>
+        <a onclick = "handleLoadNews('${tabName.category_id}')" class="tab">${tabName.category}</a>
         `;
     tabContainer.appendChild(div);
   });
 
   // console.log(data.data);
 };
-
-const handleLoadNews = (id) => {
-    console.log(id);
+// fetching different catagory contents
+const handleLoadNews = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+    const data = await res.json();
+    console.log(data);
 };
 
 handleCatagory();
