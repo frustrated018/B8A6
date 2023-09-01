@@ -13,10 +13,9 @@ const handleCatagory = async () => {
         `;
     tabContainer.appendChild(div);
   });
-
 };
 // fetching different catagory contents
-const handleLoadVideo = async (id) => { 
+const handleLoadVideo = async (id) => {
   idName = id;
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${id}`
@@ -36,23 +35,20 @@ const handleLoadVideo = async (id) => {
   } else {
     data.data.forEach((video) => {
       const postedDate = video.others.posted_date;
-      const postedText = postedDate
-        ? `${formatPostedDate(postedDate)}`
-        : '';
+      const postedText = postedDate ? `${formatPostedDate(postedDate)}` : "";
 
       // Creating new cards
       const newDiv = document.createElement("div");
       newDiv.classList = `card bg-base-100 shadow-xl flex flex-col h-[400px]`; // the class of the created list
+      const postedItem = postedText
+        ? `<div class="absolute bottom-2 right-2 bg-neutral-900 rounded px-[5px] py-1 text-white text-[10px] font-normal">${postedText}</div>`
+        : "";
       newDiv.innerHTML = `
       <figure class="flex-1 relative">
       <img src="${video?.thumbnail}" class="relative">
       <!-- Posted date in hours and minutes or empty string -->
-      <div class="absolute bottom-2 right-2 bg-neutral-900 rounded px-[5px] py-1 text-white text-[10px] font-normal">
-        ${postedText}
-      </div>
+      ${postedItem}
     </figure>
-  
-      </div>
       <!-- text content -->
       <div class="card-body flex-1">
           <!-- Profile photo and title -->
@@ -152,13 +148,12 @@ const handleSortByView = async () => {
 };
 // Date formatting function
 function formatPostedDate(postedDate) {
-  if (!postedDate) return ""; 
-  const date = new Date(postedDate * 1000); 
+  if (!postedDate) return "";
+  const date = new Date(postedDate * 1000);
   const hours = date.getUTCHours();
   const minutes = date.getUTCMinutes();
   return `${hours}h ${minutes}m ago`;
 }
-
 
 handleCatagory();
 handleLoadVideo("1000");
