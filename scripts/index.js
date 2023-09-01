@@ -109,10 +109,22 @@ const handleSortByView = async () => {
     cardsContainer.appendChild(newDiv);
   } else {
     data.data.forEach((video) => {
+      const postedDate = video.others.posted_date;
+      const postedText = postedDate ? `${formatPostedDate(postedDate)}` : "";
+
+      // Creating new cards
       const newDiv = document.createElement("div");
       newDiv.classList = `card bg-base-100 shadow-xl flex flex-col h-[400px]`; // the class of the created list
+      const postedItem = postedText
+        ? `<div class="absolute bottom-2 right-2 bg-neutral-900 rounded px-[5px] py-1 text-white text-[10px] font-normal">${postedText}</div>`
+        : "";
       newDiv.innerHTML = `
-      <figure class="flex-1"><img src="${video?.thumbnail}"></figure>
+      <figure class="flex-1 relative">
+      <img src="${video?.thumbnail}" class="relative">
+      <!-- Posted date in hours and minutes or empty string -->
+      ${postedItem}
+    </figure>
+      <!-- text content -->
       <div class="card-body flex-1">
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
