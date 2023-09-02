@@ -8,7 +8,7 @@ const handleCatagory = async () => {
   const data = await res.json();
   data.data.forEach((tabName) => {
     const div = document.createElement("div");
-    div.classList = `mt-5`;
+    div.classList = `mt-[32px]`;
     div.innerHTML = `
         <button onclick = "handleLoadVideo('${tabName?.category_id}'); handleColorChange(event)" class="tab unclicked bg-opacity-20 rounded  text-opacity-70 text-base font-medium">${tabName?.category}</button>
         `;
