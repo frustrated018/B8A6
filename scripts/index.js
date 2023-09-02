@@ -8,12 +8,18 @@ const handleCatagory = async () => {
   const data = await res.json();
   data.data.forEach((tabName) => {
     const div = document.createElement("div");
+    div.classList = `mt-5`;
     div.innerHTML = `
-        <a onclick = "handleLoadVideo('${tabName?.category_id}')" class="tab">${tabName?.category}</a>
+        <button onclick = "handleLoadVideo('${tabName?.category_id}'); handleColorChange(event)" class="tab unclicked bg-opacity-20 rounded  text-opacity-70 text-base font-medium">${tabName?.category}</button>
         `;
     tabContainer.appendChild(div);
   });
+  const tabButtons = document.querySelectorAll('.tab');
+  tabButtons[0].classList.remove('unclicked');
+  tabButtons[0].classList.add('clicked');
 };
+
+
 // fetching different catagory contents
 const handleLoadVideo = async (id) => {
   idName = id;
@@ -83,6 +89,7 @@ const handleLoadVideo = async (id) => {
     });
   }
 };
+
 // Sorting function
 const handleSortByView = async () => {
   const response = await fetch(
@@ -164,8 +171,20 @@ function formatPostedDate(postedDate) {
   const date = new Date(postedDate * 1000);
   const hours = date.getUTCHours();
   const minutes = date.getUTCMinutes();
-  return `${hours}h ${minutes}m ago`;
+  return `${hours}hrs ${minutes}min ago`;
 }
+
+const handleColorChange = (event) => {
+  const tabButtons = document.querySelectorAll(".tab");
+   tabButtons.forEach((button) => {
+    button.classList.remove('clicked');
+    button.classList.add('unclicked');
+  });
+
+  event.target.classList.remove('unclicked');
+  event.target.classList.add('clicked');
+}
+
 
 handleCatagory();
 handleLoadVideo("1000");
