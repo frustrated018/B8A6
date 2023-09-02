@@ -57,7 +57,7 @@ const handleLoadVideo = async (id) => {
       ${postedItem}
     </figure>
       <!-- text content -->
-      <div class="flex flex-col flex-1 p-2">
+      <div class="flex flex-col flex-1 p-6 gap-[10px]">
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
               <div class="avatar">
@@ -69,9 +69,9 @@ const handleLoadVideo = async (id) => {
                 video?.title
               }</h3>
           </div>
-          <!-- Creator name and blue check -->
-          <div class="flex flex-row gap-2">
-              <div class="text-neutral-900 text-opacity-70 text-sm font-normal">${
+          <!-- Creator name and blue check & view count -->
+          <div class="flex flex-row gap-[9px]">
+              <div class="text-neutral-900 text-opacity-70 text-sm font-normal pl-12">${
                 video?.authors[0]?.profile_name
               }</div>
                   <span>${
@@ -81,7 +81,7 @@ const handleLoadVideo = async (id) => {
                   }</span>
               </div>
           <!-- View count -->
-          <div class="text-neutral-900 text-opacity-70 text-sm font-normal">${
+          <div class="text-neutral-900 text-opacity-70 text-sm font-normal pl-12">${
             video?.others?.views
           } views</div>
       </div>
@@ -135,7 +135,7 @@ const handleSortByView = async () => {
       ${postedItem}
     </figure>
       <!-- text content -->
-      <div class="flex flex-col flex-1 p-2">
+      <div class="flex flex-col flex-1 p-6 gap-[10px]">
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
               <div class="avatar">
@@ -147,9 +147,9 @@ const handleSortByView = async () => {
                 video?.title
               }</h3>
           </div>
-          <!-- Creator name and blue check -->
-          <div class="flex flex-row gap-2">
-              <div class="text-neutral-900 text-opacity-70 text-sm font-normal">${
+          <!-- Creator name and blue check & view count -->
+          <div class="flex flex-row gap-[9px]">
+              <div class="text-neutral-900 text-opacity-70 text-sm font-normal pl-12">${
                 video?.authors[0]?.profile_name
               }</div>
                   <span>${
@@ -159,7 +159,7 @@ const handleSortByView = async () => {
                   }</span>
               </div>
           <!-- View count -->
-          <div class="text-neutral-900 text-opacity-70 text-sm font-normal">${
+          <div class="text-neutral-900 text-opacity-70 text-sm font-normal pl-12">${
             video?.others?.views
           } views</div>
       </div>
