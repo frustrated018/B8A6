@@ -61,7 +61,7 @@ const handleLoadVideo = async (id) => {
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
               <div class="avatar">
-                  <div class="w-10 rounded-full">
+                  <div class="w-12 rounded-full">
                       <img src="${video?.authors[0]?.profile_picture}">
                   </div>
               </div>
@@ -139,7 +139,7 @@ const handleSortByView = async () => {
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
               <div class="avatar">
-                  <div class="w-10 rounded-full">
+                  <div class="w-12 rounded-full">
                       <img src="${video?.authors[0]?.profile_picture}">
                   </div>
               </div>
@@ -174,7 +174,7 @@ function formatPostedDate(postedDate) {
   const date = new Date(postedDate * 1000);
   const hours = date.getUTCHours();
   const minutes = date.getUTCMinutes();
-  return `${hours}hrs ${minutes}min ago`;
+  return `${hours} hrs ${minutes} min ago`;
 }
 
 const handleColorChange = (event) => {
