@@ -14,7 +14,7 @@ const handleCatagory = async () => {
         `;
     tabContainer.appendChild(div);
   });
-  const tabButtons = document.querySelectorAll('.tab');
+  const tabButtons = document.querySelectorAll('.tab')
   tabButtons[0].classList.remove('unclicked');
   tabButtons[0].classList.add('clicked');
 };
@@ -45,18 +45,18 @@ const handleLoadVideo = async (id) => {
 
       // Creating new cards
       const newDiv = document.createElement("div");
-      newDiv.classList = `card bg-base-100 shadow-xl flex flex-col h-[400px]`; // the class of the created list
+      newDiv.classList = `card rounded-2xl  bg-base-100 shadow-xl h-[300px]`; // the class of the created list
       const postedItem = postedText
         ? `<div class="absolute bottom-2 right-2 bg-neutral-900 rounded px-[5px] py-1 text-white text-[10px] font-normal">${postedText}</div>`
         : "";
       newDiv.innerHTML = `
-      <figure class="flex-1 relative">
+      <figure class=" h-[200px] relative bg-cover">
       <img src="${video?.thumbnail}" class="relative">
       <!-- Posted date in hours and minutes or empty string -->
       ${postedItem}
     </figure>
       <!-- text content -->
-      <div class="card-body flex-1">
+      <div class="flex flex-col flex-1 p-2">
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
               <div class="avatar">
@@ -64,7 +64,7 @@ const handleLoadVideo = async (id) => {
                       <img src="${video?.authors[0]?.profile_picture}">
                   </div>
               </div>
-              <h3 class="text-base text-neutral-900 font-bold leading-relaxed">${
+              <h3 class="text-base text-neutral-900 font-bold">${
                 video?.title
               }</h3>
           </div>
