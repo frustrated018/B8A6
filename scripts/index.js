@@ -14,11 +14,10 @@ const handleCatagory = async () => {
         `;
     tabContainer.appendChild(div);
   });
-  const tabButtons = document.querySelectorAll('.tab')
-  tabButtons[0].classList.remove('unclicked');
-  tabButtons[0].classList.add('clicked');
+  const tabButtons = document.querySelectorAll(".tab");
+  tabButtons[0].classList.remove("unclicked");
+  tabButtons[0].classList.add("clicked");
 };
-
 
 // fetching different catagory contents
 const handleLoadVideo = async (id) => {
@@ -51,7 +50,9 @@ const handleLoadVideo = async (id) => {
         : "";
       newDiv.innerHTML = `
       <figure class=" h-[200px] relative bg-cover">
-      <img src="${video?.thumbnail}" class="relative">
+      <img src="${
+        video?.thumbnail
+      }" class="relative w-full h-full object-cover">
       <!-- Posted date in hours and minutes or empty string -->
       ${postedItem}
     </figure>
@@ -121,18 +122,20 @@ const handleSortByView = async () => {
 
       // Creating new cards
       const newDiv = document.createElement("div");
-      newDiv.classList = `card bg-base-100 shadow-xl flex flex-col h-[400px]`; // the class of the created list
+      newDiv.classList = `card rounded-2xl  bg-base-100 shadow-xl h-[300px]`; // the class of the created list
       const postedItem = postedText
         ? `<div class="absolute bottom-2 right-2 bg-neutral-900 rounded px-[5px] py-1 text-white text-[10px] font-normal">${postedText}</div>`
         : "";
       newDiv.innerHTML = `
-      <figure class="flex-1 relative">
-      <img src="${video?.thumbnail}" class="relative">
+      <figure class=" h-[200px] relative bg-cover">
+      <img src="${
+        video?.thumbnail
+      }" class="relative w-full h-full object-cover">
       <!-- Posted date in hours and minutes or empty string -->
       ${postedItem}
     </figure>
       <!-- text content -->
-      <div class="card-body flex-1">
+      <div class="flex flex-col flex-1 p-2">
           <!-- Profile photo and title -->
           <div class="flex flex-row gap-2 items-center">
               <div class="avatar">
@@ -140,7 +143,7 @@ const handleSortByView = async () => {
                       <img src="${video?.authors[0]?.profile_picture}">
                   </div>
               </div>
-              <h3 class="text-base text-neutral-900 font-bold leading-relaxed">${
+              <h3 class="text-base text-neutral-900 font-bold">${
                 video?.title
               }</h3>
           </div>
@@ -176,18 +179,18 @@ function formatPostedDate(postedDate) {
 
 const handleColorChange = (event) => {
   const tabButtons = document.querySelectorAll(".tab");
-   tabButtons.forEach((button) => {
-    button.classList.remove('clicked');
-    button.classList.add('unclicked');
+  tabButtons.forEach((button) => {
+    button.classList.remove("clicked");
+    button.classList.add("unclicked");
   });
 
-  event.target.classList.remove('unclicked');
-  event.target.classList.add('clicked');
-}
+  event.target.classList.remove("unclicked");
+  event.target.classList.add("clicked");
+};
 
-const blogBtn = document.getElementById('btn-blog');
-blogBtn.addEventListener('click', function () {
-  window.open("blog.html", "_blank")
+const blogBtn = document.getElementById("btn-blog");
+blogBtn.addEventListener("click", function () {
+  window.open("blog.html", "_blank");
 });
 
 handleCatagory();
