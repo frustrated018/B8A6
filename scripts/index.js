@@ -185,6 +185,10 @@ const handleColorChange = (event) => {
   event.target.classList.add('clicked');
 }
 
+const blogBtn = document.getElementById('btn-blog');
+blogBtn.addEventListener('click', function () {
+  window.location.href = "blog.html";
+});
 
 handleCatagory();
 handleLoadVideo("1000");
