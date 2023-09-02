@@ -39,35 +39,143 @@
         <section class="w-3/4 mx-auto">
             <!-- Accordian starts here -->
             <!-- Number 1 -->
-            <div class="collapse collapse-arrow bg-base-200">
-                <input type="radio" name="my-accordion-2" checked />
-                <div class="collapse-title text-xl font-medium">
-                    Click to open this one and close others
-                </div>
-                <div class="collapse-content">
-                    <p>hello</p>
-                </div>
-            </div>
-            <!-- Number 2 -->
-            <div class="collapse collapse-arrow bg-base-200">
+            <div class="collapse collapse-arrow bg-base-200 mb-4">
                 <input type="radio" name="my-accordion-2" />
                 <div class="collapse-title text-xl font-medium">
-                    Click to open this one and close others
+                    Discussing the Scopes of var, let & const
                 </div>
                 <div class="collapse-content">
-                    <p>hello</p>
+                    <!-- content -->
+                    <div class="container mx-auto bg-white p-4 rounded-lg shadow-lg">
+                        <ul class="pl-6">
+                            <li class="mb-6">
+                                <h2 class="text-3xl font-bold p-2">var</h2>
+                                <ol class="list-decimal pl-6">
+                                    <li class="mb-2">Function Scope: Variables declared with <code
+                                            class="bg-blue-200 p-1 rounded">var</code> are function-scoped and can be
+                                        accessed only within the function they are defined in.</li>
+                                    <li class="mb-2">Hoisting: Variables declared with <code
+                                            class="bg-blue-200 p-1 rounded">var</code> are hoisted to the top of their
+                                        containing function or global context.</li>
+                                    <li class="mb-2">No Block Scope: <code class="bg-blue-200 p-1 rounded">var</code>
+                                        does not have block-level scope; variables declared inside blocks are accessible
+                                        outside of them.</li>
+                                </ol>
+                            </li>
+
+                            <li class="mb-6">
+                                <h2 class="text-3xl font-bold p-2">let</h2>
+
+                                <ol class="list-decimal pl-6">
+                                    <li class="mb-2">Block Scope: Variables declared with <code
+                                            class="bg-blue-200 p-1 rounded">let</code> are block-scoped, limiting their
+                                        accessibility to the block where they are defined.</li>
+                                    <li class="mb-2">No Hoisting Issues: Unlike <code
+                                            class="bg-blue-200 p-1 rounded">var</code>, <code
+                                            class="bg-blue-200 p-1 rounded">let</code> variables are not hoisted and are
+                                        only accessible after declaration.</li>
+                                    <li class="mb-2">Reassignment: <code class="bg-blue-200 p-1 rounded">let</code>
+                                        variables can be reassigned new values after their initial declaration,
+                                        maintaining block-level scope.</li>
+                                </ol>
+                            </li>
+
+                            <li class="mb-6">
+                                <h2 class="text-3xl font-bold p-2">const</h2>
+
+                                <ol class="list-decimal pl-6">
+                                    <li class="mb-2">Block Scope: Variables declared with <code
+                                            class="bg-blue-200 p-1 rounded">const</code> have block-level scope,
+                                        ensuring their visibility only within the block they are declared in.</li>
+                                    <li class="mb-2">No Reassignment: <code class="bg-blue-200 p-1 rounded">const</code>
+                                        variables cannot be reassigned to new values after their initial assignment,
+                                        promoting immutability.</li>
+                                    <li class="mb-2">Use with Objects and Arrays: While the value assigned to a <code
+                                            class="bg-blue-200 p-1 rounded">const</code> variable cannot be changed,
+                                        objects and arrays declared with <code
+                                            class="bg-blue-200 p-1 rounded">const</code> can have their properties or
+                                        elements modified.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- Number 3 -->
-            <div class="collapse collapse-arrow bg-base-200">
-                <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-xl font-medium">
-                    Click to open this one and close others
-                </div>
-                <div class="collapse-content">
-                    <p>hello</p>
-                </div>
-            </div>
+                <!-- Number 2 -->
+                <div class="collapse collapse-arrow bg-base-200 mb-4">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-medium">
+                        <h2>Usecases of null & undefined</h2>
+                    </div>
+                    <div class="collapse-content">
+                        <div class="container mx-auto bg-white p-4 rounded-lg shadow-lg">
+                            <p class="mb-4">
+                                In JavaScript, "null" and "undefined" are two distinct values with different use cases.
+                            </p>
+                            <h2 class="text-xl font-bold mb-2">null</h2>
+                            <p class="mb-4">
+                                Explicit Absence of Value: null is used when you want to explicitly represent the
+                                absence of any object value or a placeholder for an object that doesn't exist yet.
+                                <br>
+                                <br>
+                                Initialization: You can initialize variables with null to indicate that they have no
+                                meaningful value until assigned.
+                                <br>
+                                <br>
+                                Cleaning Up References: In some cases, you might set an object or variable to null to
+                                release references and help with garbage collection.
+                            </p>
+
+                            <h2 class="text-xl font-bold mb-2">undefined</h2>
+                            <p>
+                                Implicit Absence of Value: undefined typically indicates that a variable has been
+                                declared but has not been assigned a value. It represents the absence of an expected
+                                value.
+                                <br>
+                                <br>
+                                Function Return: If a function doesn't return a value, it implicitly returns undefined.
+                                <br>
+                                <br>
+                                Non-Existent Properties: Accessing a non-existent object property or array element
+                                returns undefined.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="collapse collapse-arrow bg-base-200">
+                        <input type="radio" name="my-accordion-2" />
+                        <div class="collapse-title text-xl font-medium">
+                            Rest API's
+                        </div>
+                        <div class="collapse-content">
+                            <p>
+
+                                A REST API, or Representational State Transfer Application Programming Interface, serves
+                                as a crucial component in modern web development, enabling seamless communication
+                                between different software systems over the internet. It operates on a set of
+                                well-defined principles and leverages standard HTTP methods to facilitate the management
+                                of data, including retrieval (GET), creation (POST), modification (PUT), and deletion
+                                (DELETE).
+                                <br>
+                                <br>
+                                The strength of REST APIs lies in their elegance and simplicity. They adhere to the
+                                principle of statelessness, meaning each client request must carry all the information
+                                required for the server to understand and fulfill it. This statelessness ensures
+                                scalability and reliability, as servers don't need to maintain session-specific data
+                                between requests.
+                                <br>
+                                <br>
+                                Furthermore, REST APIs are platform-agnostic, making them highly versatile. They can
+                                return data in various formats, such as JSON (JavaScript Object Notation) or XML
+                                (eXtensible Markup Language), making them suitable for diverse client applications,
+                                including web browsers, mobile apps, and even Internet of Things (IoT) devices.
+                                <br>
+                                <br>
+                                In essence, a REST API serves as a bridge that allows different software applications to
+                                communicate effectively over the web. Its elegance, scalability, and platform
+                                independence have made it the preferred choice for developers when building dynamic,
+                                data-driven applications across a wide range of domains and industries.
+                            </p>
+                        </div>
+                    </div>
         </section>
     </main>
 </body>

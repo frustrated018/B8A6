@@ -187,7 +187,7 @@ const handleColorChange = (event) => {
 
 const blogBtn = document.getElementById('btn-blog');
 blogBtn.addEventListener('click', function () {
-  window.location.href = "blog.html";
+  window.open("blog.html", "_blank")
 });
 
 handleCatagory();
