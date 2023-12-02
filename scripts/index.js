@@ -195,3 +195,6 @@ blogBtn.addEventListener("click", function () {
 
 handleCatagory();
 handleLoadVideo("1000");
+
+
+// Made assignment 6 public
